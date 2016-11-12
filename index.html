@@ -1,1 +1,128 @@
-<h1>Ana...Will you marry me? </h1>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #e6f3ff;
+            padding: 20px;
+        }
+        
+        #container-main {
+            display: none;
+        }
+        
+        .img-storyline {
+            height: 400px;
+        }
+
+        figure {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container-main">
+        <figure>
+            <img src="https://s3.amazonaws.com/beautifulnow_production/uploads/ckeditor_assets/pictures/6539/content_c2-Photo-Courtesy-of-Chandra-X-Ray-Observatory.-Colliding-Galaxies.jpg"
+                alt="mister bbeen" class="img-storyline" />
+            <figcaption>When we first met....</figcaption>
+        </figure>
+        <figure>
+            <img src="http://67.media.tumblr.com/018d9d41d65ca533efd3b53e4d6825dd/tumblr_mmrabn6h6C1rjjzu4o1_250.gif" alt="castle borisovata"
+            />
+            <figcaption>The place of our first 'real' date....</figcaption>
+        </figure>
+        <figure>
+            <img src="https://66.media.tumblr.com/d80d27564ac26e9a19f4a313ec93b51d/tumblr_o77p1fxOXE1vudnlfo1_500.gif" alt="kiss">
+            <figcaption>How the kiss felt like to me..</figcaption>
+        </figure>
+        <figure>
+            <img src="http://24.media.tumblr.com/13ba53aff9706f73481285c5fc9d50c8/tumblr_mkybswWrZg1qgwcnoo8_250.gif" alt="i know">
+            <figcaption>First time..at your place..:d:d</figcaption>
+        </figure>
+        <figure>
+            <img src="http://i21.photobucket.com/albums/b300/spacemonkey_fg/Blog%20Pictures%20III/Eraserhead10_zps7dd63475.jpg" alt="meeting your parents">
+            <figcaption>At your parents...you know the scene..:d</figcaption>
+        </figure>
+        <figure>
+            <img src="https://66.media.tumblr.com/9c45d50f757256f4f1e758a25a9e8f5e/tumblr_mojbxxifLe1qdj5jco4_250.gif" alt="vihren">
+            <figcaption>Vihren...</figcaption>
+        </figure>
+        <figure>
+            <img src="http://s.en.fishki.net/upload/en/201305/06/10284/ad0ef64cc6d9e801a80a6b411aabc09f.gif" alt="crazy times">
+            <figcaption>krazyy timess..sometimes :d</figcaption>
+        </figure>
+        <figure>
+            <img src="http://vignette2.wikia.nocookie.net/gameofthrones/images/e/e5/1508_promo_stills_12001692731.jpg/revision/latest?cb=20150601040408"
+                alt="white walker" width="700" height="400">
+            <figcaption>At my place..."Mnogo priqtna atmosfera :)" - A White Walker</figcaption>
+        </figure>
+        <figure>
+            <img src="https://media3.giphy.com/media/ZE5PjcuRXatdC/200_s.gif" alt="meandyoualadestra">
+            <figcaption>Schisms..</figcaption>
+        </figure>
+
+        <h2>The endd..:3</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/A0FavvK7La8" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="questions">
+        <h2>Test</h2>
+        <form name="formZaAnn">
+            <p>My favourite food:</p>
+            <div class="radio">
+                <label><input type="radio" name="favFood" id="favFood1">Butter</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="favFood" id="favFood2">You</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="favFood" id="favFood3">Buttered you</label>
+            </div>
+            <p>I was standing...</p>
+            <button onclick="giveAudioHint(event)" id="hintButton">Hint</button>
+            <div class="radio">
+                <label><input type="radio" name="finishSong" id="finishSong1">you were there</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="finishSong" id="finishSong2">on the edge...</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="finishSong" id="finishSong3">should I stay or should I go</label>
+            </div>
+            <button type="button" onclick="checkAnswers()">Probvai</button>
+        </form>
+        <img src="http://clothesforlady.com/images/designer-clothes/2219-tjmax.png" alt="bettering the design">
+    </div>
+    <script>
+        function checkAnswers() {
+            var isCorrectAnswer1Checked = document.getElementById("favFood3").checked;
+            var isCorrectAnswer2Checked = document.getElementById("finishSong1").checked;
+
+            if (isCorrectAnswer1Checked && isCorrectAnswer2Checked) {
+                document.getElementById("questions").style.display = "none";
+                document.getElementById("container-main").style.display = "block";
+            } else {
+                alert("Nee vqrnoo :3 probvai otnovo");
+            }
+        }
+        var audio = null;
+        var isAudioPlaying = false;
+
+        function giveAudioHint(e) {
+            e.preventDefault();
+
+            if (isAudioPlaying) {
+                audio.pause();
+                isAudioPlaying = false;
+                document.getElementById("hintButton").innerText = "Hint";
+            } else {
+                audio = new Audio('INXSNeverTearUsApart.mp3');
+                audio.loop = true;
+                audio.volume = 0.2;
+                audio.play();
+                isAudioPlaying = true;
+                document.getElementById("hintButton").innerText = "Pause";
+            }
+        }
+    </script>
+</body>
